@@ -40,6 +40,7 @@ struct MyReducer {
 
 - [ ] Add remaining `CLLocationManagerDelegate` methods
 - [ ] Add Swift 6 support
+- [ ] Make better
 
 ## Contributing
 
