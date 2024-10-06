@@ -3,7 +3,7 @@
 A library that bridges the Composable Architecture and Core Location. 
 Largely based on [pointfreeco/composable-core-location](https://github.com/pointfreeco/composable-core-location/tree/main) but works with the Composable Architecture v1.15.0.
 
-## Usage
+## Example Usage
 
 ```swift
 import ComposableArchitecture
@@ -22,9 +22,12 @@ struct MyReducer {
         Reduce { state, action in 
             switch action {
                 case .onAppear:
+                locationManagerClient.requestWhenInUseAuthorization()
                 return .run { send in 
                     for await delegateAction in await locationManagerClient.delegate() {
                         switch delegateAction {
+                        case .didChangeAuthorization(let status):
+                            // handle authorization changes with other effects
                         case .didUpdateLocations(let locations):
                             // handle location updates with other effects
                         }
