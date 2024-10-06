@@ -3,6 +3,8 @@
 A library that bridges the Composable Architecture and Core Location. 
 Largely based on [pointfreeco/composable-core-location](https://github.com/pointfreeco/composable-core-location/tree/main) but works with the Composable Architecture v1.15.0.
 
+> Currently the library only supports the most basic functionality for a hobby project I am working on. If you need more functionality, please feel free to submit a PR.
+
 ## Example Usage
 
 ```swift
