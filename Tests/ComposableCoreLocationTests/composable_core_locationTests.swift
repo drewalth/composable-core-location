@@ -1,5 +1,5 @@
 import Testing
-@testable import composable_core_location
+@testable import ComposableCoreLocation
 
 @Test
 func example() async throws {
