@@ -8,11 +8,14 @@ import Combine
 import ComposableArchitecture
 import CoreLocation
 
-public enum LocationManagerDelegateAction: Equatable, Sendable {
+public enum LocationManagerDelegateAction: Equatable {
   case didUpdateLocations([CLLocation])
   case didFailWithError(Error)
   case didChangeAuthorization(CLAuthorizationStatus)
-  case didDetermineState(CLRegionState, region: Region)
-  case didPauseLocationUpdates
-  case didResumeLocationUpdates
+
+  #if os(iOS) || os(macOS) || targetEnvironment(macCatalyst)
+  case didDetermineState(CLRegionState, CLRegion)
+  #endif
+
+  case didStartMonitoringFor(CLRegion)
 }
